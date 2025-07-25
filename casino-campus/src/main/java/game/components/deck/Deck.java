@@ -81,7 +81,6 @@ public class Deck {
     // - "빈 컬렉션입니다" 경고: 초기화 블록을 만들지 않았습니다
     // - NullPointerException: Card 생성자에 null을 전달했습니다
     private final List<Card> cards = new ArrayList<>();
-
     {
         for(Suit suit : Suit.values()) {
             for(Rank rank : Rank.values()) {
@@ -99,6 +98,9 @@ public class Deck {
      * <p>카지노 규칙:</p>
      * 새로운 덱은 사용 전에 반드시 섞어야 합니다.
      */
+    public void reset() {
+        Deck deck = new Deck();
+    }
     public void shuffle() {
         // TODO: 구현하세요
         //

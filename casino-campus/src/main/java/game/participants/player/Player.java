@@ -71,7 +71,11 @@ public class Player {
         // 1. amount가 음수인지 체크
         // 2. 음수면 IllegalArgumentException 던지기
         // 3. 양수면 money에 추가
-        throw new UnsupportedOperationException("Not implemented yet");
+        if( amount < 0 ){
+            throw new IllegalArgumentException("Not implemented yet");
+        }
+        this.money += amount;
+        //throw new UnsupportedOperationException("Not implemented yet");
     }
     
     /**
@@ -87,7 +91,17 @@ public class Player {
         // 2. money >= amount인지 체크
         // 3. 충분하면 차감하고 true 반환
         // 4. 부족하면 false 반환
-        throw new UnsupportedOperationException("Not implemented yet");
+        if( amount < 0 ){
+            return false;
+        }
+        else if(this.money >= amount){
+            this.money -= amount;
+            return true;
+        }
+        else{
+            return false;
+        }
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
     
     /**
